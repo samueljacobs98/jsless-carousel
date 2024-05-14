@@ -1,67 +1,47 @@
 .carousel {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
-/* input[type="radio"] {
+input[type="radio"] {
   display: none;
-} */
-
-.carousel-groups {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-group {
-  display: flex;
-  width: 100%;
-  flex-shrink: 0;
-  justify-content: space-around;
+  display: none;
+  justify-content: space-between;
 }
 
 .carousel-item {
-  width: 23%;
   box-sizing: border-box;
+  padding: 10px;
 }
 
 .carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
   background-color: #333;
   color: white;
   padding: 10px;
   cursor: pointer;
-  z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-button.prev {
-  left: 10px;
-}
-
-.carousel-button.next {
-  right: 10px;
-}
-
-#carousel-1:checked ~ .prev,
-#carousel-2:checked ~ .prev-2,
-#carousel-3:checked ~ .prev-1,
 #carousel-1:checked ~ .next-2,
-#carousel-2:checked ~ .next-1,
-#carousel-3:checked ~ .next {
-  display: none;
+#carousel-2:checked ~ .next-3,
+#carousel-2:checked ~ .prev-1,
+#carousel-3:checked ~ .prev-2 {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-#carousel-1:checked ~ .carousel-groups {
-  transform: translateX(0%);
-}
-
-#carousel-2:checked ~ .carousel-groups {
-  transform: translateX(-100%);
-}
-
-#carousel-3:checked ~ .carousel-groups {
-  transform: translateX(-200%);
+#carousel-1:checked ~ .group-1,
+#carousel-2:checked ~ .group-2,
+#carousel-3:checked ~ .group-3 {
+  display: flex;
 }
