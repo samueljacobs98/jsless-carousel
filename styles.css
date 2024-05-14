@@ -22,12 +22,11 @@ input[type="radio"] {
 }
 
 .carousel-button {
-  opacity: 0;
-  pointer-events: none;
   background-color: #333;
   color: white;
   padding: 10px;
   cursor: pointer;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -36,8 +35,7 @@ input[type="radio"] {
 #carousel-2:checked ~ .next-3,
 #carousel-2:checked ~ .prev-1,
 #carousel-3:checked ~ .prev-2 {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 #carousel-1:checked ~ .group-1,
